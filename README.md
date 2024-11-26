@@ -1,8 +1,4 @@
-Your documentation is clear and well-organized. Here's the **revised final version** with the corrections and additional details you requested:
-
----
-
-# **Load Balancer with HA Backend Applications**
+# **Load Balancer with High availability Backend Applications**
 
 ## **Description**
 
@@ -10,7 +6,7 @@ This project sets up a secure HAProxy-based load balancer using **Docker** conta
 
 The load balancer is accessible via:
 - **HTTPS**: [https://localhost:8443](https://localhost:8443)
-- **SSH**: `ssh root@localhost -p 2222` (Password: `joe123`)
+- **SSH**: `ssh root@localhost -p 2222`
 
 ## **Features**
 - **SSL Termination**: HAProxy handles HTTPS traffic on port `8443` using a custom SSL certificate.
@@ -37,7 +33,7 @@ Before you begin, ensure that you have the following tools installed on your sys
 ├── Dockerfile                # Custom HAProxy image build file
 ├── diagram.py                # Python script for generating architecture diagram
 ├── haproxy.cfg               # HAProxy configuration file
-├── lab_diagram.png           # Generated architecture diagram
+├── yosef_lab.png           # Generated architecture diagram
 ├── main.tf                   # Terraform configuration for container and network setup
 ├── cert.pem                  # SSL certificate file for HTTPS
 ├── server.crt                # SSL certificate for the load balancer
@@ -88,7 +84,6 @@ To verify:
   ```bash
   ssh root@localhost -p 2222
   ```
-  Enter the password: `joe123`.
 
 ---
 
@@ -108,14 +103,6 @@ To visualize the infrastructure architecture, run the Python script `diagram.py`
 
 ---
 
-## **Usage**
-Once the infrastructure is up and running:
-1. **HTTPS Traffic**: Clients send requests to the HAProxy load balancer at `https://localhost:8443`.
-2. **Load Balancing**: HAProxy forwards traffic to one of the backend applications (`hello-app-1` or `hello-app-2`) using the round-robin algorithm.
-3. **Health Checks**: HAProxy monitors the backend applications' health and routes traffic to healthy instances.
-
----
-
 ## **Destroying the Infrastructure**
 To destroy the infrastructure and clean up the Docker containers and network:
 ```bash
@@ -124,13 +111,3 @@ terraform destroy
 
 ---
 
-This version ensures the following:
-- HTTPS and SSH access are documented clearly.
-- Users are informed about both backend applications.
-- Instructions for verification and diagram generation are detailed. 
-
-Let me know if you need any additional adjustments!
-```
-Terraform will prompt for confirmation before removing the resources. Type `yes` to proceed.
-
----
