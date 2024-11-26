@@ -72,22 +72,14 @@ Terraform will create the Docker containers and network for you. To begin, initi
 Once Terraform completes, you should have the following components running:
 - **HAProxy Load Balancer**:
   - **HTTPS**: [https://localhost:8443](https://localhost:8443) (SSL-secured)
-  - **SSH**: `ssh root@localhost -p 2222` (Password: `joe123`)
+  - **SSH**: `ssh root@localhost -p 2222`
 - **Backend Applications**:
   - `hello-app-1`: Internal IP `192.168.1.11`
   - `hello-app-2`: Internal IP `192.168.1.22`
 
-To verify:
-
-- **HTTPS**: Visit `https://localhost:8443` in your browser. Traffic will be routed to one of the backend applications in a round-robin manner.
-- **SSH**: Use the command below to SSH into the HAProxy container:
-  ```bash
-  ssh root@localhost -p 2222
-  ```
-
 ---
 
-### **4. Generate the Architecture Diagram (Optional)**
+### **4. Generate the Architecture Diagram**
 To visualize the infrastructure architecture, run the Python script `diagram.py`:
 
 1. Ensure the `diagrams` library is installed:
