@@ -1,4 +1,4 @@
-# **HAProxy Load Balancer with Docker and Terraform**
+# **Load Balancer with HA backend applications**
 
 ## **Description**
 
@@ -74,7 +74,7 @@ pip install diagrams
 
 Then, generate the diagram:
 ```bash
-python diagram.py
+python3 diagram.py
 ```
 The output will be saved as `lab_diagram.png` in the current directory.
 
